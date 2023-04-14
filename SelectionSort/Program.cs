@@ -1,40 +1,40 @@
 ﻿int[] SortSelection(int[] collection)
-  {
+{
     int size = collection.Length;
     for (int i = 0; i < size - 1; i++)
     {
-      int pos = i;
-      for (int j = i + 1; j < size; j++)
-      {
-        if (collection[j] < collection[pos]) pos = j;
-      }
-      int temp = collection[i];
-      collection[i] = collection[pos];
-      collection[pos] = temp;
+        int pos = i;
+        for (int j = i + 1; j < size; j++)
+        {
+            if (collection[j] < collection[pos]) pos = j;
+        }
+        int temp = collection[i];
+        collection[i] = collection[pos];
+        collection[pos] = temp;
     }
     return collection;
-  }
+}
 
 int[] MySortSelection(int[] array)
 {
-  for (int i = 0; i < array.Length - 1; i++)
-  {
-    int pos = i;
-
-    for (int j = i + 1; j < array.Length; j++)
+    for (int i = 0; i < array.Length - 1; i++)
     {
-        if (array[j] < array[pos]) pos = j;
-    }
+        int pos = i;
 
-    int temp = array[i];
-    array[i] = array[pos];
-    array[pos] = temp;
-  }
-  return array;
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if (array[j] < array[pos]) pos = j;
+        }
+
+        int temp = array[i];
+        array[i] = array[pos];
+        array[pos] = temp;
+    }
+    return array;
 }
 
 int[] NewArray(int size)
-  {
+{
     int[] array = new int[size];
 
     for (int i = 0; i < array.Length; i++)
@@ -43,7 +43,7 @@ int[] NewArray(int size)
     }
 
     return array;
-  }
+}
 
 void PrintArray(int[] array)
 {

@@ -1,11 +1,8 @@
-﻿
+﻿System.Console.Clear();
 
-/// <summary>
-/// Сортировка методом пузырька (Базовая)
-/// </summary>
-/// <param name="collection">Исходный массив</param>
-/// <returns>Отсортированный массив массив</returns>
-int[] SortBubble(int[] collection)
+// Сортировка методом пузырька (Базовая)
+
+int[] SortBubble(ref int[] collection)
 {
     int size = collection.Length;
 
@@ -25,12 +22,10 @@ int[] SortBubble(int[] collection)
     return collection;
 }
 
-/// <summary>
-/// Сортировка методом пузырька (Оптимизированная)
-/// </summary>
-/// <param name="collection">Исходный массив</param>
-/// <returns>Отсортированный массив массив</returns>
-int[] SortBubbleOptimized(int[] collection)
+
+// Сортировка методом пузырька (Оптимизированная)
+
+int[] SortBubbleOptimized(ref int[] collection)
 {
     int size = collection.Length;
 
@@ -49,6 +44,21 @@ int[] SortBubbleOptimized(int[] collection)
     return collection;
 }
 
+void CheckSort(int[] array)
+{
+    bool status = true;
+
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        if (array[i] > array[i + 1])
+        {
+            status = false;
+            break;
+        }
+    }
+
+    System.Console.WriteLine(status);
+}
 
 int[] NewArray(int size)
 {
@@ -71,14 +81,24 @@ void PrintArray(int[] array)
 }
 
 int[] array = NewArray(20);
+
 PrintArray(array);
 System.Console.WriteLine();
-int[] mySelectionArray = SortBubble(array);
+CheckSort(array);
+System.Console.WriteLine();
+int[] mySelectionArray = SortBubble(ref array);
 PrintArray(mySelectionArray);
 System.Console.WriteLine();
+CheckSort(mySelectionArray);
+System.Console.WriteLine();
+
 System.Console.WriteLine();
 array = NewArray(20);
 PrintArray(array);
 System.Console.WriteLine();
-mySelectionArray = SortBubbleOptimized(array);
+CheckSort(array);
+System.Console.WriteLine();
+mySelectionArray = SortBubbleOptimized(ref array);
 PrintArray(mySelectionArray);
+System.Console.WriteLine();
+CheckSort(mySelectionArray);
